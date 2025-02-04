@@ -1,4 +1,4 @@
-import app from './src/server.js'
+import app from './src/server.js';
 
 // Importar la función connection()
 import connection from './src/database.js';

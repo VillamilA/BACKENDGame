@@ -2,7 +2,7 @@
 
 import { sendMailToUser, sendMailToRecoveryPassword } from "../config/nodemailer.js"
 import generarJWT from "../helpers/crearJWT.js"
-import admin from "../models/admin.js"
+import admin from "../models/Admin.js"
 import mongoose from "mongoose";
 
 // login

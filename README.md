@@ -55,9 +55,11 @@ Conexion realizada en Cloudinary para guardar las imágenes subidas.
 ## Sprint 5 Deploy
 ###	Configuración y deploy de BDD.
 *	Lado del Games BDD
-![image](https://github.com/user-attachments/assets/74b8ca7a-6a8c-4d58-8748-513703e52646)
+![image](https://github.com/user-attachments/assets/4f3e16ea-405a-4d14-add1-acef7a67016d)
+
 
 Lado del Usuario BDD
-![image](https://github.com/user-attachments/assets/d8ab2a74-607b-4247-8e39-5f15ddf15caa)
+![image](https://github.com/user-attachments/assets/4be761e5-e343-4d86-bcc1-c523e59e4b45)
+
 
 *	Configuración y deploy del servidor backend.

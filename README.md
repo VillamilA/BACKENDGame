@@ -1,13 +1,9 @@
 # GRUPO 1
-### Links Backend Beeceptor:
-[LINK BDD USERS](https://gamesusers.free.beeceptor.com/api/users)
-[LINK BDD GAMES](https://gamesss.free.beeceptor.com/api/games)
 
 ## Grupo integrado por:
 * Angel Villamil (Scrum Master)
 * Richard Robalino
 * Christian Marquez
-+ Angelo Loor
 
 ### Introducción
 El presente proyecto tiene como objetivo desarrollar un sistema backend que permita gestionar videojuegos mediante un conjunto de funcionalidades CRUD (Crear, Leer, Actualizar y Eliminar), así como implementar un módulo seguro de registro y autenticación de usuarios. Este sistema está diseñado para garantizar la integridad y seguridad de los datos, utilizando herramientas modernas como el cifrado de contraseñas y la generación de tokens JWT para la protección de sesiones.  

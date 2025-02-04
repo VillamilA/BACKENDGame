@@ -1,5 +1,6 @@
-import Jugadores from "../models/Jugadores.js";
 import jwt from "jsonwebtoken";
+import Admin from "../models/Admin.js";
+import Jugadores from "../models/Jugadores.js";
 
 const verificarAutenticacion = async (req, res, next) => {
     const token = req.header("Authorization");
@@ -12,17 +13,25 @@ const verificarAutenticacion = async (req, res, next) => {
         // Extraer el token quitando el "Bearer "
         const tokenLimpio = token.split(" ")[1];
 
-        // Verificar el token con la misma clave usada para firmarlo
-        const decoded = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
+        // Verificar el token
+        const { id, rol } = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
 
-        // Buscar al jugador en la base de datos
-        const jugador = await Jugadores.findById(decoded.id).select("-password -__v");
+        let usuario;
 
-        if (!jugador) {
-            return res.status(404).json({ msg: "Jugador no encontrado" });
+        if (rol === "admin") {
+            usuario = await Admin.findById(id).lean().select("-password");
+            if (!usuario) return res.status(404).json({ msg: "Administrador no encontrado" });
+
+            req.adminBDD = usuario;
+        } else if (rol === "jugador") {
+            usuario = await Jugadores.findById(id).lean().select("-password");
+            if (!usuario) return res.status(404).json({ msg: "Jugador no encontrado" });
+
+            req.jugadoresBDD = usuario;
+        } else {
+            return res.status(403).json({ msg: "Rol no autorizado" });
         }
 
-        req.jugadoresBDD = jugador;
         next();
     } catch (error) {
         console.error(error);

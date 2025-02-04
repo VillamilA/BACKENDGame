@@ -1,7 +1,7 @@
-import app from './server.js'
+import app from './src/server.js'
 
 // Importar la función connection()
-import connection from './database.js';
+import connection from './src/database.js';
 
 // Haicneod uso de la función connection()
 connection()
